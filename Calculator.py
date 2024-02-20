@@ -1,39 +1,28 @@
+#latest version
 
-while (True):
+while(True):
     try:
-        print("[1] - addition\n[2] - subtraction\n[3] - multiplication\n[4] - division\n")
-        operation = int(input("Select operation: "))
+        value1 = float(input("Enter first number: "))
+        what_to_do = input("Operation (+, -, *, /): ")
+        value2 = float(input("Enter second number: "))
     except ValueError:
-        print("Only numbers are allowed.\n")
+        print("Input error.")
         continue
 
-    match operation:
-        case 1:
-            value1 = int(input("Enter first number: "))
-            value2 = int(input("Enter second number: "))
-            result = value1 + value2
-            print(f"Result: {result}\n")
+    def calculate_result(first, operation, second):
+        if(operation == '+'):
+            return first + second
+        elif(operation == '-'):
+            return first - second
+        elif(operation == '*'):
+            return first * second
+        elif(operation == '/'):
+            return first / second
+        else:
+            print("Wrong sign.")
 
-        case 2:
-            value1 = int(input("Enter first number: "))
-            value2 = int(input("Enter second number: "))
-            result = value1 - value2
-            print(f"Result: {result}\n")
+    print(f"Result: {calculate_result(value1, what_to_do, value2)}")
 
-        case 3:
-            value1 = int(input("Enter first number: "))
-            value2 = int(input("Enter second number: "))
-            result = value1 * value2
-            print(f"Result: {result}\n")
-
-        case 4:
-            value1 = int(input("Enter first number: "))
-            value2 = int(input("Enter second number: "))
-            result = value1 / value2
-            print(f"Result: {result}\n")
-
-        case other:
-            print("Wrong choice.\n")
 
 
 
